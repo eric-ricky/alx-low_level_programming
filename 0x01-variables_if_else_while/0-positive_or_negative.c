@@ -7,6 +7,7 @@
   * return - always 0 (success)
   */
 
+/* returns 0 */
 int main(void)
 {
 	int n;
