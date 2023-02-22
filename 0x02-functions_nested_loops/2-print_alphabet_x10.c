@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * print_alphabet - the entry point
+  * print_alphabet_x10 - the entry point
   *
   * Description: prints if a number is positive negative or zero
   *
