@@ -7,21 +7,28 @@
 
 int main(void)
 {
-	int a = 1;
-	int b = 2;
-	int i, c;
+	int count, sum;
+	int fib1 = 0;
+	int fib2 = 1;
 
-	printf("%d, %d, ", a, b);
-
-	for (i = 2; i < 50; i++)
+	for (count = 0; count < 50; count++)
 	{
-		c = a + b;
-		printf("%d, ", c);
-		a = b;
-		b = c;
-	}
+		sum = fib1 + fib2;
 
-	printf("\n");
+		printf("%d", sum);
+
+		fib1 = fib2;
+		fib2 = sum;
+
+		if (count == 49)
+		{
+			printf("\n");
+		} else
+		{
+			printf(", ");
+		}
+
+	}
 
 	return (0);
 }
