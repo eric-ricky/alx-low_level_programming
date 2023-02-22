@@ -1,14 +1,13 @@
 #include "main.h"
 
 /**
-  * main - Entry point
+  * print_alphabet - the entry point
   *
   * Description: prints if a number is positive negative or zero
   *
-  * Return: Always 0 (success)
   */
 
-int main(void)
+void print_alphabet(void)
 {
 	char c = 'a';
 
@@ -19,6 +18,4 @@ int main(void)
 	}
 
 	_putchar('\n');
-
-	return (0);
 }
