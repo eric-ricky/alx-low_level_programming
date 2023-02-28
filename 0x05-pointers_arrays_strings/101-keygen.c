@@ -7,26 +7,22 @@
  * main - entry point
  */
 
-#define PASSWORD_LENGTH 10
+#define PASSWORD_LENGTH 6
 
 int main(void)
 {
 	int i;
-	int index;
 	char password[PASSWORD_LENGTH + 1];
-
-	const char *charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 	srand(time(NULL));
 
 	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
-		index = rand() % 62;
-		password[i] = charset[index];
+		password[i] = charset[rand() % sizeof(charset)];
 	}
 
 	password[PASSWORD_LENGTH] = '\0';
-
 	printf("%s\n", password);
 
 	return (0);
