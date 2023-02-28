@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -18,7 +18,7 @@ void puts_half(char *str)
 		n = (len + 1) / 2;
 	}
 
-	for (i = n; i < len; i++)
+	for (i = n; i < len - 1; i++)
 	{
 		printf("%c", str[i]);
 	}
