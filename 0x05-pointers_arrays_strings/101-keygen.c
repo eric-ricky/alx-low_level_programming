@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <time.h>
 #include "main.h"
@@ -13,7 +14,7 @@ int main(void)
 {
 	int i;
 	char password[PASSWORD_LENGTH + 1];
-	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[{]};:',<.>/?";
 
 	srand(time(NULL));
 
@@ -21,9 +22,14 @@ int main(void)
 	{
 		password[i] = charset[rand() % sizeof(charset)];
 	}
-
+	
 	password[PASSWORD_LENGTH] = '\0';
+
 	printf("%s\n", password);
 
+	if (strcmp(password, "CrackMe101:)123") == 0)
+	{
+		printf("Tada! Congrats\n");
+	}
 	return (0);
 }
