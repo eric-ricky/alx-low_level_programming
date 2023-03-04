@@ -9,26 +9,22 @@
 
 char *leet(char *str)
 {
-	int i;
-	char *p = str;
-	char leet_map[256] = {0};
+	char *leet_str = str;
+	char *letters = "aAeEoOtTlL";
+	char *replacements = "44330771";
+	int i, j;
 
-	const char *leet_chars = "aAeEoOtTlL";
-	const char *leet_replacements = "44330771";
-
-	for (i = 0; leet_chars[i]; i++)
+	for (i = 0; leet_str[i] != '\0'; i++)
 	{
-		leet_map[(unsigned char) leet_chars[i]] = leet_replacements[i];
-	}
-
-	while (*p)
-	{
-		if (leet_map[(unsigned char) *p])
+		for (j = 0; j < 10; j++)
 		{
-			*p = leet_map[(unsigned char) *p];
+			if (letters[j] == leet_str[i])
+			{
+				leet_str[i] = replacements[j];
+				break;
+			}
 		}
-		p++;
 	}
 
-	return (str);
+	return (leet_str);
 }
